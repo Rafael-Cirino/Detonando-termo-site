@@ -99,7 +99,6 @@ function found_words(list_words, list_in, list_in_id, list_block, word_partial) 
 
                 if (list_words[palavra].includes(aux[0])) {
                     for (l_id in list_words[palavra]) {
-                        console.log(list_words[palavra][l_id], aux[0], aux[1])
                         if ((list_words[palavra][l_id] == aux[0]) && (l_id == Number.parseInt(aux[1]))) {
                             list_remove.push(list_words[palavra])
                             break
