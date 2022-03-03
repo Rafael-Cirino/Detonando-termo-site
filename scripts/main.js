@@ -85,7 +85,7 @@ function closeBox(i) {
         let box_letter = box.value.toLowerCase()
 
         let letra_in = `${box_letter}:${j}`
-        if ((box_class == "edit")) {
+        if ((box_class == "edit") || (box_class == "wrong")) {
             box.setAttribute("class", "box wrong")
             if (!list_block.includes(box_letter) && !list_in.includes(box_letter) && !word_partial.includes(box_letter)) {
                 list_block.push(box_letter)

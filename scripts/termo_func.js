@@ -44,11 +44,13 @@ function create_regex_or(list_or, condition) {
     return word_regex_in
 }
 
-function regex_list(reg, list_words) {
+function regex_list(reg, list_words_reg) {
     // Regex
-    return list_words.filter(function (word) {
+    list_x = list_words_reg.filter(function (word) {
         return reg.test(word)
     })
+
+    return list_x
 }
 
 function remove_item(list_remove, list_words) {
@@ -82,35 +84,45 @@ function found_words(list_words, list_in, list_in_id, list_block, word_partial) 
         list_remove = regex_list(RegExp(reg), list_words)
 
         list_words = remove_item(list_remove, list_words)
-
-        //console.log(list_remove)
     }
 
     if (list_in.length > 0) {
         //Letra sem posição
+
         reg = create_regex_or(list_in, "and")
         list_words = regex_list(RegExp(reg), list_words)
+        console.log(reg)
+        console.log(list_words.length)
+
 
         //Letra com posição
         let list_remove = []
+        let count = 0
+        let control = false
         for (palavra in list_words) {
+            control = false
             for (id in list_in_id) {
                 let aux = list_in_id[id].split(":")
-
                 if (list_words[palavra].includes(aux[0])) {
                     for (l_id in list_words[palavra]) {
                         if ((list_words[palavra][l_id] == aux[0]) && (l_id == Number.parseInt(aux[1]))) {
+                            //console.log(list_words[palavra])
+
                             list_remove.push(list_words[palavra])
+                            count += 1
+                            control = true
                             break
                         }
                     }
                 }
+                if (control) {
+                    break
+                }
             }
         }
-
         list_words = remove_item(list_remove, list_words)
-        //console.log(list_in_id)
-        //console.log(list_remove)
+        //console.log(list_remove.length)
+        //console.log(count)
     }
 
     console.log(list_words)
