@@ -40,15 +40,17 @@ body{
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    font-size: 35px;
+    font-size: 1vw;
     line-height: 16px;  
     text-transform: uppercase;
     --happy-jump: 55%;
+    cursor: pointer;
 
     border: 4px solid transparent;
-    height: 60px;
+    height: 4vw;
 
     position: absolute;
+    
 }
 
 .box.enter{

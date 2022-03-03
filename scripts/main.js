@@ -21,8 +21,8 @@ function buttons() {
 
             btn.setAttribute("id", text_id)
             btn.setAttribute("name", text_id)
-            btn.style.top = `${18 + i * 9.8}%`
-            btn.style.left = `${38 + j * 4.8}%`
+            btn.style.top = `max(${4 + (i + 1) * 5}%, ${4 + (i + 1) * 4.8}vw)`
+            btn.style.left = `max(${25 + (j + 1) * 2}%, ${33 + (j + 1) * 4.8}vw)`
 
             btn.setAttribute('onclick', 'color_box("' + text_id + '")')
             document.body.appendChild(btn)
