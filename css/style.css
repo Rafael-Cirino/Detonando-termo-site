@@ -3,6 +3,12 @@ body{
     font: normal 15pt Arial;
 }
 
+@media only screen and (max-width: 640px) {
+    body {
+      background-color: lightblue;
+    }
+  }
+
 .box.right{
     background: #3aa394;
     color: #FAFAFF;
@@ -46,7 +52,7 @@ body{
     cursor: pointer;
 
     border: 4px solid transparent;
-    height: 4vw;
+    height: max(6.5%, 4vw);
 
     position: absolute;
     
