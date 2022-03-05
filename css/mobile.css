@@ -11,12 +11,12 @@
         height: 40px;
         text-align: center;
 
-        top: 80vh;
+        top: 75vh;
         left: 36vw;
     }
 
     .box.enter{
-        top: 70vh;
+        top: 65vh;
     
         color: #FAFAFF;
         background: #252022;
