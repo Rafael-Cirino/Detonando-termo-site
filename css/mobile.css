@@ -1,16 +1,22 @@
 @media only screen and (max-width: 640px) {
+    header{
+        font: normal 20pt Arial;
+        padding: 30px;
+    }
+
     section{
         font: normal 8pt Arial;
         line-height: 6pt;
         width: 100px;
         height: 40px;
+        text-align: center;
 
-        top: 82%;
-        left: 38%;
+        top: 70%;
+        left: 36%;
     }
 
     .box.enter{
-        top: 73%;
+        top: 60%;
     
         color: #FAFAFF;
         background: #252022;
@@ -21,13 +27,13 @@
     }
 
     .box{
-        font-size: 3vw;
+        font-size: 4vw;
         line-height: 16px;  
         text-transform: uppercase;
         --happy-jump: 55%;
         cursor: pointer;
     
-        height: 8vw;
+        height: 12vw;
     
         position: absolute;
         
