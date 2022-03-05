@@ -149,7 +149,13 @@ function enter_main() {
         writeBox(word, tentativa)
 
         log.innerHTML = "<p>Banco de palavras:</p>"
-        log.innerHTML += `<p>${list_words.length}</p>`
+        if (list_words.length <= 6) {
+            log.innerHTML += `<p>${list_words}</p>`
+            log.innerHTML += `<p>${list_words.length}</p>`
+        } else {
+            log.innerHTML += `<p>${list_words.length}</p>`
+        }
+
 
         tentativa += 1
     }
