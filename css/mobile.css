@@ -11,12 +11,12 @@
         height: 40px;
         text-align: center;
 
-        top: 70%;
-        left: 36%;
+        top: 80vh;
+        left: 36vw;
     }
 
     .box.enter{
-        top: 60%;
+        top: 70vh;
     
         color: #FAFAFF;
         background: #252022;
@@ -33,7 +33,7 @@
         --happy-jump: 55%;
         cursor: pointer;
     
-        height: 12vw;
+        height: 6vh;
     
         position: absolute;
         
