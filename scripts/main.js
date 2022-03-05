@@ -24,8 +24,8 @@ function buttons() {
             //btn.style.top = `${55 + (i + 1) * 50}px`
             //btn.style.left = `${20 + (j + 1) * 50}px`
             if (window.innerWidth <= 641) {
-                btn.style.top = `${9 + (i + 1) * 9}%`
-                btn.style.left = `${18 + (j + 1) * 9}%`
+                btn.style.top = `${9 + (i + 1) * 9}vw`
+                btn.style.left = `${18 + (j + 1) * 9}vw`
             } else {
                 btn.style.top = `max(${4 + (i + 1) * 4.8}%, ${3 + (i + 1) * 4.8}vw)`
                 btn.style.left = `max(${(j + 2) * 4.8}%, ${33.5 + (j + 1) * 4.8}vw)`
