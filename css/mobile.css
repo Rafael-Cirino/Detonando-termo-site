@@ -1,25 +1,47 @@
 @media only screen and (max-width: 640px) {
-    body {
-      background-color: lightblue;
-    }
-
     section{
-        font: normal 10pt Arial;
-        width: 140px;
+        font: normal 8pt Arial;
+        line-height: 6pt;
+        width: 100px;
+        height: 40px;
 
-        top: 65%;
-        left: 30%;
+        top: 82%;
+        left: 38%;
     }
 
     .box.enter{
-        top: 80%;
+        top: 73%;
     
         color: #FAFAFF;
         background: #252022;
-        font-size: 24px;
-        height: 70px;
-        line-height: 24px;
+        font-size: 12px;
+        height: 50px;
+        line-height: 12px;
         border-radius: 15%;
+    }
+
+    .box{
+        font-size: 3vw;
+        line-height: 16px;  
+        text-transform: uppercase;
+        --happy-jump: 55%;
+        cursor: pointer;
+    
+        height: 8vw;
+    
+        position: absolute;
+        
+    }
+
+    footer{
+        color: white;
+        text-align: center;
+        font-style: italic;
+        font-size: 18px;
+    
+        position: absolute;
+        top: 92%;
+        left: 42%;
     }
 
     

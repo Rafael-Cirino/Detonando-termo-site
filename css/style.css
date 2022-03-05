@@ -3,12 +3,6 @@ body{
     font: normal 15pt Arial;
 }
 
-@media only screen and (max-width: 640px) {
-    body {
-      background-color: lightblue;
-    }
-  }
-
 .box.right{
     background: #3aa394;
     color: #FAFAFF;
@@ -45,7 +39,7 @@ body{
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    font-size: 1vw;
+    font-size: 2vw;
     line-height: 16px;  
     text-transform: uppercase;
     --happy-jump: 55%;

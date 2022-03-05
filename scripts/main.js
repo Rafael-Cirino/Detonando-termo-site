@@ -23,14 +23,14 @@ function buttons() {
             btn.setAttribute("name", text_id)
             //btn.style.top = `${55 + (i + 1) * 50}px`
             //btn.style.left = `${20 + (j + 1) * 50}px`
-            if (screen.width < 640) {
-                btn.style.top = `${10 + (i + 2) * 5}`
-                btn.style.left = `${(j + 2) * 4.8}`
+            if (window.innerWidth < 640) {
+                btn.style.top = `${9 + (i + 1) * 9}%`
+                btn.style.left = `${18 + (j + 1) * 9}%`
             } else {
-                btn.style.top = `max(${10 + (i + 2) * 5}%, ${3 + (i + 1) * 4.8}vw)`
+                btn.style.top = `max(${4 + (i + 1) * 4.8}%, ${3 + (i + 1) * 4.8}vw)`
                 btn.style.left = `max(${(j + 2) * 4.8}%, ${33.5 + (j + 1) * 4.8}vw)`
             }
-            console.log(window.screen.width)
+            console.log(window.innerWidth)
 
 
             btn.setAttribute('onclick', 'color_box("' + text_id + '")')
@@ -52,9 +52,17 @@ function buttons() {
 
         if (list_b[b_name] == "ENTER") {
             btn.setAttribute('onclick', "enter_main()")
-            btn.style.left = `${53}%`
+            if (window.innerWidth < 640) {
+                btn.style.left = `${55}%`
+            } else {
+                btn.style.left = `${53}%`
+            }
         } else {
-            btn.style.left = `${38}%`
+            if (window.innerWidth < 640) {
+                btn.style.left = `${30}%`
+            } else {
+                btn.style.left = `${38}%`
+            }
             btn.setAttribute('onclick', 'random_word()')
         }
         document.body.appendChild(btn)
