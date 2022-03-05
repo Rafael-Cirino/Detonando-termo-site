@@ -23,7 +23,7 @@ function buttons() {
             btn.setAttribute("name", text_id)
             //btn.style.top = `${55 + (i + 1) * 50}px`
             //btn.style.left = `${20 + (j + 1) * 50}px`
-            if (window.innerWidth < 640) {
+            if (window.innerWidth <= 641) {
                 btn.style.top = `${9 + (i + 1) * 9}%`
                 btn.style.left = `${18 + (j + 1) * 9}%`
             } else {
