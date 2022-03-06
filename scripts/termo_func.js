@@ -103,8 +103,6 @@ function found_words(list_words, list_in, list_in_id, list_block, word_partial) 
 
         reg = create_regex_or(list_in, "and")
         list_words = regex_list(RegExp(reg), list_words)
-        console.log(reg)
-        console.log(list_words.length)
 
 
         //Letra com posição

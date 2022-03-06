@@ -99,11 +99,10 @@ function buttons_4() {
 }
 
 function random_word_4() {
+    let word = word_select()
     if (tentativa == 1) {
-        word = list_words[0][Math.floor(Math.random() * list_words.length)]
         writeBox_4(word, 0)
     } else {
-        word = list_words[0][Math.floor(Math.random() * list_words.length)]
         writeBox_4(word, tentativa - 1)
     }
 
@@ -156,6 +155,45 @@ function writeBox_4(word, i) {
     }
 }
 
+function word_select() {
+    let word
+    let id_sel = 0
+    let aux = 10 ** 5
+
+    for (let k = 0; k < 3; k++) {
+        if ((list_words[k].length < aux) && (list_words[k].length != 0)) {
+            id_sel = k
+            aux = list_words[k].length
+        }
+    }
+
+    if (list_words[id_sel].length <= 1) {
+        return list_words[id_sel][0]
+    }
+
+    let i = 0
+    let point = 0
+    while (i <= 10) {
+        let point_aux = 0
+        word = list_words[id_sel][Math.floor(Math.random() * list_words.length)]
+
+        for (let k = 0; k < 4; k++) {
+            if ([word].includes(list_words[k])) {
+                point_aux += 1
+            }
+        }
+
+        if (point_aux > point) {
+            point = point_aux
+        } else if (point_aux == 4) {
+            return word
+        }
+        i += 1
+    }
+
+    console.log(id_sel)
+    return word
+}
 
 function enter_main_4() {
     var word = "BARCO"
@@ -172,12 +210,10 @@ function enter_main_4() {
 
 
         tentativa = 1
-    } else if (tentativa <= 5) {
+    } else if (tentativa <= 9) {
         closeBox(tentativa - 1)
 
         for (var k = 0; k < 4; k++) {
-            console.log(k)
-            console.log(list_words)
             list_words[k] = found_words(list_words[k], list_in[k], list_in_id[k], list_block[k], word_partial[k])
 
             let log = document.getElementById(`div_log_${k}`)
@@ -185,7 +221,7 @@ function enter_main_4() {
             log.innerHTML += `<p>${list_words[k].length}</p>`
         }
 
-        word = list_words[0][Math.floor(Math.random() * list_words.length)]
+        word = word_select()
         writeBox_4(word, tentativa)
 
         tentativa += 1
