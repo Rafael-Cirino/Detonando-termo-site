@@ -67,8 +67,11 @@ body{
 header{
     color: white;
     text-align: center;
-    font: normal 30pt Arial;
-    padding: 30px;
+    font: normal 20pt Arial;
+    padding: 10px;
+
+    top: 1%;
+    
 }
 
 section{
@@ -91,9 +94,9 @@ footer{
     color: white;
     text-align: center;
     font-style: italic;
-    font-size: 20px;
+    font-size: 18px;
 
     position: absolute;
-    top: 90%;
+    top: 92%;
     left: 47%;
 }
