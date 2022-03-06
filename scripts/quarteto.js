@@ -1,10 +1,10 @@
-var log = document.getElementById("log")
 var tentativa = -1
 var allText
-var word_partial = "01234"
-var list_in = []
-var list_in_id = []
-var list_block = []
+var word_partial = ["01234", "01234", "01234", "01234"]
+var list_in = [[], [], [], []]
+var list_in_id = [[], [], [], []]
+var list_block = [[], [], [], []]
+var list_words = []
 
 function buttons_4() {
     for (var k = 0; k < 4; k++) {
@@ -67,7 +67,7 @@ function buttons_4() {
             } else {
                 btn.style.left = `${40}%`
             }
-            btn.setAttribute('onclick', 'random_word()')
+            btn.setAttribute('onclick', 'random_word_4()')
         }
         btn.style.top = `85%`
         btn.style.height = `38pt`
@@ -98,6 +98,17 @@ function buttons_4() {
     }
 }
 
+function random_word_4() {
+    if (tentativa == 1) {
+        word = list_words[0][Math.floor(Math.random() * list_words.length)]
+        writeBox_4(word, 0)
+    } else {
+        word = list_words[0][Math.floor(Math.random() * list_words.length)]
+        writeBox_4(word, tentativa - 1)
+    }
+
+}
+
 function closeBox(i) {
     for (var k = 0; k < 4; k++) {
         for (var j = 0; j < 5; j++) {
@@ -109,23 +120,26 @@ function closeBox(i) {
             let letra_in = `${box_letter}:${j}`
             if ((box_class == "edit") || (box_class == "wrong")) {
                 box.setAttribute("class", "box wrong")
-                if (!list_block.includes(box_letter) && !list_in.includes(box_letter) && !word_partial.includes(box_letter)) {
-                    list_block.push(box_letter)
+                if (!list_block[k].includes(box_letter) && !list_in[k].includes(box_letter) && !word_partial[k].includes(box_letter)) {
+                    list_block[k].push(box_letter)
                 }
-            } else if ((box_class == "yellow") && !list_in_id.includes(letra_in)) {
-                list_in_id.push(letra_in)
+            } else if ((box_class == "yellow") && !list_in_id[k].includes(letra_in)) {
+                list_in_id[k].push(letra_in)
 
-                if (!list_in.includes(box_letter)) {
-                    list_in.push(box_letter)
+                if (!list_in[k].includes(box_letter)) {
+                    list_in[k].push(box_letter)
                 }
             }
             else if (box_class == "right") {
-                word_partial = word_partial.replace(String(j), box_letter)
+                word_partial[k] = word_partial[k].replace(String(j), box_letter)
             }
 
             box.disabled = true
         }
     }
+    //console.log(list_block)
+    //console.log(list_in)
+    //console.log(word_partial)
 }
 
 function writeBox_4(word, i) {
@@ -140,12 +154,10 @@ function writeBox_4(word, i) {
             box.disabled = false
         }
     }
-
-
 }
 
+
 function enter_main_4() {
-    var list_words = []
     var word = "BARCO"
 
     if (tentativa == -1) {
@@ -162,6 +174,19 @@ function enter_main_4() {
         tentativa = 1
     } else if (tentativa <= 5) {
         closeBox(tentativa - 1)
+
+        for (var k = 0; k < 4; k++) {
+            console.log(k)
+            console.log(list_words)
+            list_words[k] = found_words(list_words[k], list_in[k], list_in_id[k], list_block[k], word_partial[k])
+
+            let log = document.getElementById(`div_log_${k}`)
+            log.innerHTML = "<p>Banco de palavras:</p>"
+            log.innerHTML += `<p>${list_words[k].length}</p>`
+        }
+
+        word = list_words[0][Math.floor(Math.random() * list_words.length)]
+        writeBox_4(word, tentativa)
 
         tentativa += 1
     }
