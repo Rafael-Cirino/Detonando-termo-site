@@ -1,6 +1,6 @@
 var log = document.getElementById("log")
 var tentativa = -1
-var allText, list_words
+var allText
 var word_partial = "01234"
 var list_in = []
 var list_in_id = []
@@ -29,9 +29,10 @@ function buttons_4() {
                 } else {
                     btn.style.top = `max(${4 + (i + 1) * 4.8}%, ${6.6 + (i + 1) * 3.4}vw)`
                     btn.style.left = `${(j + (k * 6.8) + 2) * 3.4}vw`
-                    btn.style.height = `3.2vw`
-                    btn.style.width = `3.2vw`
+
                 }
+                btn.style.height = `3.2vw`
+                btn.style.width = `3.2vw`
                 console.log(window.innerWidth)
 
 
@@ -54,7 +55,7 @@ function buttons_4() {
         btn.setAttribute("id", text_id)
 
         if (list_b[b_name] == "ENTER") {
-            btn.setAttribute('onclick', "enter_main()")
+            btn.setAttribute('onclick', "enter_main_4()")
             if (window.innerWidth < 640) {
                 btn.style.left = `${55}%`
             } else {
@@ -64,11 +65,11 @@ function buttons_4() {
             if (window.innerWidth < 640) {
                 btn.style.left = `${30}%`
             } else {
-                btn.style.left = `${42}%`
+                btn.style.left = `${40}%`
             }
             btn.setAttribute('onclick', 'random_word()')
         }
-        btn.style.top = `86%`
+        btn.style.top = `85%`
         btn.style.height = `38pt`
         btn.style.font = `normal 12pt Arial`
         document.body.appendChild(btn)
@@ -96,3 +97,74 @@ function buttons_4() {
         get_sec.appendChild(div)
     }
 }
+
+function closeBox(i) {
+    for (var k = 0; k < 4; k++) {
+        for (var j = 0; j < 5; j++) {
+            let id_box = `id:${k}:${i}:${j}`
+            let box = document.getElementById(id_box)
+            let box_class = box.classList[1]
+            let box_letter = box.value.toLowerCase()
+
+            let letra_in = `${box_letter}:${j}`
+            if ((box_class == "edit") || (box_class == "wrong")) {
+                box.setAttribute("class", "box wrong")
+                if (!list_block.includes(box_letter) && !list_in.includes(box_letter) && !word_partial.includes(box_letter)) {
+                    list_block.push(box_letter)
+                }
+            } else if ((box_class == "yellow") && !list_in_id.includes(letra_in)) {
+                list_in_id.push(letra_in)
+
+                if (!list_in.includes(box_letter)) {
+                    list_in.push(box_letter)
+                }
+            }
+            else if (box_class == "right") {
+                word_partial = word_partial.replace(String(j), box_letter)
+            }
+
+            box.disabled = true
+        }
+    }
+}
+
+function writeBox_4(word, i) {
+    for (var k = 0; k < 4; k++) {
+        for (var letra in word) {
+            let id_box = `id:${k}:${i}:${letra}`
+            let box = document.getElementById(id_box)
+
+            box.setAttribute("class", "box edit")
+            box.setAttribute("value", word[letra])
+            box.textContent = word[letra]
+            box.disabled = false
+        }
+    }
+
+
+}
+
+function enter_main_4() {
+    var list_words = []
+    var word = "BARCO"
+
+    if (tentativa == -1) {
+        writeBox_4(word, 0)
+
+        for (var k = 0; k < 4; k++) {
+            let list_aux = readjson("./json_words.json")
+            list_words.push(list_aux)
+        }
+
+        console.log(list_words)
+
+
+        tentativa = 1
+    } else if (tentativa <= 5) {
+        closeBox(tentativa - 1)
+
+        tentativa += 1
+    }
+
+}
+

@@ -6,6 +6,18 @@ function readjson(path_json) {
     return allText
 }
 
+function color_box(id_box) {
+    let box = document.getElementById(id_box)
+
+    if (["edit", "wrong"].includes(box.classList[1])) {
+        box.setAttribute("class", "box yellow")
+    } else if (box.classList[1] == "yellow") {
+        box.setAttribute("class", "box right")
+    } else {
+        box.setAttribute("class", "box wrong")
+    }
+}
+
 function readTextFile(file) {
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, false);
