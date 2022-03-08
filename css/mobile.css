@@ -7,15 +7,15 @@
         color: white;
         background: #252022;
         border-radius: 10px;
-        width: 300px;
-        height: 500px;
+        width: 80vw;
+        height: 62vh;
         margin: auto;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.623);
         text-align: left;
-        font: normal 12pt Arial;
+        font: normal 2vh Arial;
     
         position: absolute;
-        top: 10%;
+        top: 12vh;
         left: 10%;
     }
 
