@@ -30,7 +30,7 @@ body{
 }
 
 .box{
-    transition: background-color 0.2s linear 0.1s;
+    transition: background-color 0.1s linear 0.05s;
     aspect-ratio: 1;
     font-weight: 600;
     font-family: 'Mitr', sans-serif;
@@ -98,6 +98,29 @@ footer{
     position: absolute;
     top: 91%;
     left: 47%;
+}
+
+section#intro{
+    color: white;
+    background: #252022;
+    border-radius: 10px;
+    width: 400px;
+    height: 350px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.623);
+    text-align: left;
+    font: normal 12pt Arial;
+
+    position: absolute;
+    top: 16.5%;
+    left: 68%;
+}
+
+p#title{
+    padding: 10px;
+    margin: auto;
+    font: bold 18pt Arial;
+    text-align: center;
 }
 
 a#link:link, a#link:visited {
