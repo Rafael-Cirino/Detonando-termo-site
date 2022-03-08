@@ -67,6 +67,32 @@ function buttons() {
         }
         document.body.appendChild(btn)
     }
+
+    if (window.innerWidth < 640) {
+        let btn = document.createElement("button")
+
+        btn.setAttribute("class", "box_down")
+        btn.setAttribute("id", "b_down")
+        btn.setAttribute("name", "b_down")
+        btn.setAttribute("value", "Down")
+        btn.textContent = String.fromCodePoint(`11015`) //11014
+        btn.setAttribute('onclick', 'page_down()')
+
+        document.body.appendChild(btn)
+    }
+}
+
+function page_down() {
+    let b_down = document.getElementById("b_down")
+
+    if (document.documentElement.scrollTop > 300) {
+        document.documentElement.scrollTop = 0
+        b_down.textContent = String.fromCodePoint(`11015`)
+    } else {
+        document.documentElement.scrollTop = 800
+        b_down.textContent = String.fromCodePoint(`11014`)
+    }
+
 }
 
 function writeBox(word, i) {
