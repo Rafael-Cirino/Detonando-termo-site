@@ -5,6 +5,10 @@
 
 - [Site do detonado](https://detonando-termo.herokuapp.com/index.html)
 
+    - [Vídeo detonando termo](https://youtu.be/qvRWoiUZhuc)
+    - [Vídeo detonando dueto](https://youtu.be/p7SsHZOADMc)
+    - [Vídeo detonando quarteto](https://youtu.be/8RyhLu3HO68)
+
 
 ## Objetivo
 Asistindo as lives do [Casimiro](https://www.youtube.com/c/CortesdoCasimitoOFICIAL) jogando [Letreco](https://www.gabtoschi.com/letreco/) e [Termo](https://term.ooo/), pensei por que não fazer um código que resolve estes jogos. Deixo bem claro aqui que o objetivo não é trapacear, mas desenvolver lógica e conhecimentos de programação
@@ -29,6 +33,10 @@ A interface é exatamente como demonstrado na imagem abaixo, para utilizar o app
     1. Caso amarelo, de **1 clique** na letra para ela ficar em **AMARELO**, significando que está na palavra final, só não se sabe a posição.
     2. Caso verde, de **2 cliques** na letra para ela ficar em **VERDE**, significando que está na palavra final e nesta posição.
 4. Após passar o gabarito para o app, seguir do passo 1 novamente até encontrar a palavra.
+
+- [Vídeo detonando termo](https://youtu.be/qvRWoiUZhuc)
+- [Vídeo detonando dueto](https://youtu.be/p7SsHZOADMc)
+- [Vídeo detonando quarteto](https://youtu.be/8RyhLu3HO68)
 
 <figure>
     <img src="Image/interface_termo.PNG"
