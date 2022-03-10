@@ -182,9 +182,7 @@ function word_select() {
     for (let k of c_break) {
         let list_len = list_words[k].length
 
-        console.log(list_len)
         if (word_rigth(word_partial[k])) {
-            console.log(list_len, "passou aqui")
             list_remove.push(k)
         } else if ((list_len < aux) && (list_len > 0)) {
             id_sel = k
@@ -198,14 +196,13 @@ function word_select() {
         }
     }
 
-    console.log(aux, "aux select")
     if (aux == 1) {
         return list_words[id_sel][0]
     }
 
     let i = 0
     let point = 0
-    while (i <= 20) {
+    while (i <= 30) {
         let point_aux = 0
         word = list_words[id_sel][Math.floor(Math.random() * list_words[id_sel].length)]
 
@@ -217,8 +214,7 @@ function word_select() {
 
         if (point_aux > point) {
             point = point_aux
-        } else if (point_aux >= 2) {
-            console.log(word)
+        } else if (point_aux >= 3) {
             return word
         }
         i += 1
@@ -241,8 +237,6 @@ function enter_main_4() {
             log.innerHTML = "<p>Banco de palavras:</p>"
             log.innerHTML += `<p>${list_words[k].length}</p>`
         }
-
-        console.log(list_words)
 
 
         tentativa = 1
