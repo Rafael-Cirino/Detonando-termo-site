@@ -148,7 +148,7 @@ function random_word() {
 }
 
 function enter_main() {
-    var word = "BARCO"
+    var word = "AREIO"
 
     if (tentativa == -1) {
         writeBox(word, 0)

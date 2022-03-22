@@ -224,7 +224,7 @@ function word_select() {
 }
 
 function enter_main_4() {
-    var word = "BARCO"
+    var word = "AREIO"
 
     if (tentativa == -1) {
         writeBox_4(word, 0)
